@@ -1,0 +1,8 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/imx6/work/gateway-daemon'
+g++ -I ./include -I ./include/curl -DUSE_DEBUG -c -Wall -g src/server.c -o src/server.o
+mkdir -p build
+g++  ./src/common.o  ./src/main.o  ./src/cJSON.o  ./src/server.o -L /home/imx6/work/gateway-daemon/lib -lpthread -levent -o build/gateway-daemon
+rm -rf  ./src/common.o  ./src/main.o  ./src/cJSON.o  ./src/server.o
+make: Leaving directory '/home/imx6/work/gateway-daemon'
+ 
